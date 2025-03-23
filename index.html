@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./MyOrder.css">
+    <title>My Order</title>
+</head>
+
+<body>
+    <div class="orders-container">
+        <h2>Your Orders</h2>
+
+        <div class="order-box">
+            <div class="order-header">
+                <div class="order-details-header">
+                    <span class="order-details-heading">Order Number</span>
+                    <span>#2562015893</span>
+                </div>
+
+                <div class="order-details-header">
+                    <span class="order-details-heading">Order Date</span>
+                    <span>Jan 18, 2022</span>
+                </div>
+
+                <div class="order-details-header">
+                    <span class="order-details-heading">Ship To</span>
+                    <span>Rajkot, Gujrat, India</span>
+                </div>
+
+                <div class="order-details-header">
+                    <span class="order-details-heading">Status</span>
+                    <span class="order-status delivered">Confirmed</span>
+                </div>
+
+                <!-- <span> </span>
+                <span> </span> -->
+            </div>
+            <div class="order-item">
+                <div>
+                    <img src="./images/product-1.jpg" alt="Black T-Shirt">
+                </div>
+                <div class="order-details">
+                    <div>
+                        <p><strong><span>#P12160</span> | Men's Regular Fit Polo Black T-Shirt</strong></p>
+                        <p>₹760.00</p>
+                    </div>
+                    <p class="order-prod-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Distinctio atque aperiam quibusdam. Quis, earum nobis!</p>
+                    <span>Quantity: 2</span>
+                </div>
+            </div>
+            <div class="order-item">
+                <img src="./images/product-2.jpg" alt="Purple T-Shirt">
+                <div class="order-details">
+                    <div>
+                        <p><strong> <span>#P14512</span> | Men's Cotton Solid Round Neck Regular Fit T-Shirt</strong>
+                        </p>
+                        <p>₹450.00</p>
+                    </div>
+                    <p class="order-prod-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
+                        voluptate itaque praesentium expedita vitae repellat ipsam iusto qui quidem commodi?</p>
+                    <span>Quantity: 1</span>
+
+                </div>
+            </div>
+            <div class="order-footer">
+                <div class="cancel-order-button">Cancel Order</div> <span>Total Amount: <strong>₹1320</strong></span>
+            </div>
+        </div>
+
+        <div class="order-box">
+            <div class="order-header">
+                <div class="order-details-header">
+                    <span class="order-details-heading">Order Number</span>
+                    <span>#2562015893</span>
+                </div>
+
+                <div class="order-details-header">
+                    <span class="order-details-heading">Order Date</span>
+                    <span>Jan 18, 2022</span>
+                </div>
+
+                <div class="order-details-header">
+                    <span class="order-details-heading">Ship To</span>
+                    <span>Rajkot, Gujrat, India</span>
+                </div>
+
+                <div class="order-details-header">
+                    <span class="order-details-heading">Status</span>
+                    <span class="order-status delivered">Delivered</span>
+                </div>
+
+                <!-- <span> </span>
+                <span> </span> -->
+            </div>
+            <div class="order-item">
+                <div>
+                    <img src="./images/product-1.jpg" alt="Black T-Shirt">
+                </div>
+                <div class="order-details">
+                    <div>
+                        <p><strong><span>#P12160</span> | Men's Regular Fit Polo Black T-Shirt</strong></p>
+                        <p>₹760.00</p>
+                    </div>
+                    <p class="order-prod-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Distinctio atque aperiam quibusdam. Quis, earum nobis!</p>
+                    <span>Quantity: 2</span>
+                </div>
+            </div>
+            <div class="order-item">
+                <img src="./images/product-2.jpg" alt="Purple T-Shirt">
+                <div class="order-details">
+                    <div>
+                        <p><strong> <span>#P14512</span> | Men's Cotton Solid Round Neck Regular Fit T-Shirt</strong>
+                        </p>
+                        <p>₹450.00</p>
+                    </div>
+                    <p class="order-prod-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
+                        voluptate itaque praesentium expedita vitae repellat ipsam iusto qui quidem commodi?</p>
+                    <span>Quantity: 1</span>
+                    
+                </div>
+            </div>
+            <div class="order-footer">
+                <div class="cancel-order-button">Cancel Order</div> <span>Total Amount: <strong>₹1320</strong></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let orders = document.querySelectorAll(".order-box");
+
+            orders.forEach(order => {
+                let statusElement = order.querySelector(".order-status");
+                let cancelButton = order.querySelector(".cancel-order-button");
+
+                if (statusElement && cancelButton) {
+                    let statusText = statusElement.textContent.trim().toLowerCase();
+                    if (statusText === "delivered" || statusText === "in transit") {
+                        cancelButton.style.display = "none";
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
